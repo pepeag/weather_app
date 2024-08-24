@@ -15,7 +15,7 @@ This Laravel application fetches weather data from the OpenWeatherMap API. The a
 
    ```bash
    git clone https://github.com/pepeag/weather_app.git
-   cd weather-app
+   cd weather_app
    ```
 
 2. **Install dependencies:**
