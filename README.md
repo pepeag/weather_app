@@ -41,6 +41,7 @@ This Laravel application fetches weather data from the OpenWeatherMap API. The a
 
    ```plaintext
    OPENWEATHERMAP_API_KEY=045f61724aef9085e0bf2ed6a19da4d0
+   OPENWEATHERMAP_API_URL=https://api.openweathermap.org/data/2.5/weather
    ```
 
 6. **Run the application:**

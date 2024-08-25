@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [WeatherApiController::class, 'index']);
+Route::get('/', [WeatherApiController::class, 'index'])->name('home');
 Route::get('/weather', [WeatherApiController::class, 'getWeather'])->name('weather');
