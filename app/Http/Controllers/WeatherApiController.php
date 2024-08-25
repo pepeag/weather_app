@@ -46,8 +46,7 @@ class WeatherApiController extends Controller
                 return redirect()->route('home')->withErrors(['weather' => 'City not found. Please check spelling and try again.']);
             } else {
                 // Other API errors
-                $errorMessage = $e->getResponse()->getBody()->getContents();
-                return redirect()->route('home')->withErrors(['weather' => $errorMessage]);
+                return redirect()->route('home')->withErrors(['weather' => 'Weather data could not be fetched. Please try again later.']);
             }
         } catch (\Exception $e) {
             // Handle any unexpected errors

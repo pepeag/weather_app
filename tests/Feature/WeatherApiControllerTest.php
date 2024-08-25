@@ -50,8 +50,8 @@ class WeatherApiControllerTest extends TestCase
         $response = $this->get(route('weather', ['city' => 'Abcdefg']));
 
         // response redirects back with error
-        $response->assertRedirect('/');
-        $response->assertSessionHasErrors(['weather' => 'City not found. Please check the spelling and try again.']);
+        $response->assertRedirect(route('home'));
+        $response->assertSessionHasErrors(['weather' => 'City not found. Please check spelling and try again.']);
     }
 
     /** @test */
@@ -61,7 +61,7 @@ class WeatherApiControllerTest extends TestCase
         $response = $this->get(route('weather', ['city' => '']));
 
         // response with validation required error
-        $response->assertRedirect('/');
+        $response->assertRedirect(route('home'));
         $response->assertSessionHasErrors(['city']);
     }
 
@@ -77,7 +77,7 @@ class WeatherApiControllerTest extends TestCase
         $response = $this->get(route('weather', ['city' => 'London']));
 
         // response redirects back with error
-        $response->assertRedirect('/');
+        $response->assertRedirect(route('home'));
         $response->assertSessionHasErrors(['weather' => 'Weather data could not be fetched. Please try again later.']);
     }
 }
